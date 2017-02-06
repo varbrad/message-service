@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Message Service
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet")
+  body
+    #app
+      h1 Message Service
+      textarea(v-model="message")
+      button(@click="postMessage") Submit Data
+      hr
+      p(v-for="msg in messages")
+        | {{ msg.message }}
+        span.date {{ formatDatetime(msg.timestamp) }}
